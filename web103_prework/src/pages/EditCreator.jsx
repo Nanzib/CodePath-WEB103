@@ -1,4 +1,3 @@
-// src/pages/EditCreator.jsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { supabase } from "../client";
