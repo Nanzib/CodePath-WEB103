@@ -7,6 +7,7 @@
  *  - Static files from ./public
  */
 
+import 'dotenv/config'; 
 import express from 'express';
 import path from 'path';
 import teamsRouter from './routes/teams.js';
