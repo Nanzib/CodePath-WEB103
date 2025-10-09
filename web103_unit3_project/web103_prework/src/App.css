@@ -1,0 +1,328 @@
+/* ---------- Palette & base ---------- */
+:root{
+  --accent:#8b5e3c;        /* warm leather */
+  --accent-2:#b47a51;      /* highlight */
+  --accent-dark:#5b432d;   /* darker */
+  --muted:#6b5b4a;
+  --paper:#f5efe6;
+  --card:#fffaf6;
+  --card-border:#ded0c1;
+  --danger:#a83b2f;
+  --shadow: rgba(37, 30, 25, 0.12);
+  --radius:10px;
+  --pop: 0.98;
+}
+
+/* ---------- Global ---------- */
+html,body { height:100%; }
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg, #fcf8f3 0%, var(--paper) 100%),
+    radial-gradient(1200px 400px at 10% 10%, rgba(180,140,100,0.03), transparent 12%),
+    radial-gradient(1000px 300px at 95% 90%, rgba(120,90,50,0.02), transparent 10%);
+  color: #241f16;
+  font-family: Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+}
+
+/* links */
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+/* small util */
+.muted { color: var(--muted); }
+
+/* ---------- Page layout ---------- */
+.page-container, .page-padding, main {
+  padding: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+/* Give the title a little left breathing room and visual weight */
+.page-header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0 18px 0;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,250,245,0.7));
+  backdrop-filter: blur(2px);
+}
+
+/* more left spacing for the site title */
+.site-title {
+  color: #231b11;
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-left: 12px;          /* extra space to left */
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  padding-right: 8px;
+}
+
+/* nav actions - Add button spacing to the right */
+.nav-actions { display:flex; gap: 12px; align-items:center; margin-right: 12px; }
+.nav-link { color: var(--muted); padding: 6px 10px; border-radius: 8px; }
+.nav-link:hover { color: #2a220f; }
+
+/* make the Add button stand out and keep space to right */
+.nav-actions .btn { margin-right: 12px; padding: 10px 16px; font-size: 0.98rem; }
+
+/* ---------- Buttons (rustic & dynamic) ---------- */
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 100%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 10px 18px var(--shadow);
+  transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
+}
+
+.btn:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 16px 28px rgba(32,24,18,0.14); }
+.btn:active { transform: translateY(-1px) scale(.997); }
+.btn:disabled { opacity: 0.6; transform: none; box-shadow:none; cursor:not-allowed; }
+
+/* destructive button */
+.btn-delete, .btn.btn-delete {
+  background: linear-gradient(180deg, #bf4a39 0%, var(--danger) 100%);
+  border-color: rgba(0,0,0,0.06);
+}
+
+/* small link/button consistency (card action cadence) */
+.small-link, .small-btn, .small-delete {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  font-size: 0.94rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* small-link looks like subtle pill */
+.small-link {
+  color: var(--accent);
+  background: linear-gradient(180deg, rgba(139,94,60,0.04), rgba(139,94,60,0.02));
+  border: 1px solid rgba(139,94,60,0.06);
+}
+.small-link:hover { background: linear-gradient(180deg, rgba(139,94,60,0.08), rgba(139,94,60,0.03)); }
+
+/* small delete matches size and weight but uses danger color */
+.small-delete {
+  color: #fff;
+  background: linear-gradient(180deg, #c45a49, #a83b2f);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 10px;
+  box-shadow: 0 6px 12px rgba(168,59,47,0.08);
+}
+.small-delete:hover { transform: translateY(-2px); }
+
+/* small-btn (neutral) */
+.small-btn { color: var(--muted); background: transparent; }
+
+/* ---------- Forms ---------- */
+.form-container { max-width: 640px; margin-top: 10px; }
+.form-label { display:block; margin-top: 12px; margin-bottom: 6px; font-weight: 700; color:#2b2416; }
+.form-input, .form-textarea {
+  margin-top:6px;
+  width:100%;
+  padding: 12px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--card-border);
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(180deg, #fffdf8 0%, #fffaf0 100%);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+  color: #2b2416;
+  font-size: 1rem;
+}
+.form-textarea { min-height: 140px; resize: vertical; }
+
+/* form action block (no inline styles) */
+.form-actions { margin-top: 14px; display:flex; gap: 12px; align-items:center; }
+
+/* link-back */
+.link-back { display:inline-block; margin-bottom: 12px; color:var(--muted); font-weight:700; }
+
+/* ---------- Cards grid & cards ---------- */
+.creators-section { margin-top: 26px; }
+
+/* responsive grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+@media (min-width: 720px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1060px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* card base */
+.pico-card, .creator-card {
+  display:flex;
+  flex-direction:column;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(30,22,12,0.06);
+  transition: transform .16s cubic-bezier(.2,.85,.2,1), box-shadow .16s ease;
+  min-height: 260px;
+}
+
+/* image/figure */
+.creator-figure { margin: 0; display:block; width:100%; }
+.creator-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display:block;
+  background: linear-gradient(180deg, #efe6da, #e9dfd2);
+  border-bottom: 1px solid rgba(0,0,0,0.02);
+}
+
+/* caption area */
+.creator-figcaption { padding: 16px; display:flex; flex-direction:column; gap:8px; }
+.creator-card-title { margin:0; font-size: 1.08rem; color: #261e14; font-weight: 800; letter-spacing: .2px; }
+.muted.small { color: var(--muted); font-size: .95rem; margin: 0; line-height:1.45; }
+
+/* actions bottom */
+.card-actions-bottom {
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  padding: 12px 14px 16px;
+  margin-top:auto;
+  border-top: 1px solid var(--card-border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,250,245,0.25));
+}
+
+/* cadence fix: align card-level edit/delete area (top or bottom) */
+.card-actions {
+  margin-top: 12px;
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+
+/* card hover */
+.pico-card:hover { transform: translateY(-10px); box-shadow: 0 22px 46px rgba(30,20,10,0.12); }
+
+/* ---------- Creator view (detail) ---------- */
+.creator-container {
+  display:flex;
+  gap: 24px;
+  margin-top: 18px;
+  align-items:flex-start;
+  flex-wrap: wrap;
+}
+.creator-image-wrapper { width: 320px; flex-shrink:0; }
+.creator-image { width:100%; height:auto; border-radius: 10px; object-fit:cover; background: #efe6da; box-shadow: 0 8px 20px rgba(30,20,10,0.06); }
+
+/* details column */
+.creator-details { flex:1; min-width: 280px; }
+.creator-description { white-space: pre-wrap; color: #2b2416; line-height:1.7; }
+
+/* action buttons in details */
+.creator-actions { margin-top: 18px; display:flex; gap: 12px; align-items:center; }
+
+/* ---------- Small helpers ---------- */
+.error-text { color: var(--danger); font-weight:700; margin-top:8px; }
+.loading-text { margin-top: 12px; color: var(--muted); }
+
+/* focus outlines for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid rgba(139,94,60,0.12);
+  outline-offset: 3px;
+}
+
+/* ---------- Footer ---------- */
+.app-footer {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid var(--card-border);
+  color: var(--muted);
+  font-size: .95rem;
+  text-align:center;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 560px) {
+  .creator-container { flex-direction: column; }
+  .creator-image-wrapper { width: 100%; }
+  .card-actions-bottom { padding-left: 14px; padding-right: 14px; }
+  .page-container, .page-padding, main { padding: 18px; }
+}
+
+/* Make all direct children of .form-actions use the exact same box model and vertical centering */
+.form-actions > * {
+  display: inline-flex !important;        /* use flex so text/icon are centered */
+  align-items: center !important;         /* vertical center */
+  justify-content: center !important;     /* horizontal center */
+  height: 44px !important;                /* fixed matching height for Save / Delete */
+  min-height: 44px !important;
+  padding: 0 16px !important;             /* same horizontal padding */
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  vertical-align: middle !important;
+  margin: 0 !important;                   /* remove stray margins */
+  font-size: 1rem !important;
+}
+
+/* Ensure any SVG icons inside follow the same sizing and don't change baseline */
+.form-actions > * svg {
+  width: 16px !important;
+  height: 16px !important;
+  vertical-align: middle !important;
+  margin-right: 8px !important;
+}
+
+/* Make sure anchor-buttons (if you used <a class="btn">) also match */
+.form-actions > a.btn {
+  display: inline-flex !important;
+}
+
+/* Normalize card action buttons so Visit / Edit / Delete align vertically in the card
+   use slightly smaller height so cards look balanced */
+.card-actions-bottom .small-action,
+.card-actions .small-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 0 12px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+}
+
+/* Make small-delete visually consistent with the other small actions */
+.small-delete {
+  padding: 0 12px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure all buttons in form-actions have no top/bottom margin */
+.form-actions button,
+.form-actions .btn,
+.form-actions .btn-delete,
+.form-actions a {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* If any preview wrapper was using inline style, allow safe spacing class */
+.preview-wrapper { margin-top: 10px; }
