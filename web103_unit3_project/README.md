@@ -4,7 +4,7 @@ Submitted by: **Nanzib Chowdhury**
 
 About this web app: **UnityGrid Plaza is a virtual community space for browsing local events at four selectable locations using an interactive map. Users click a venue to view upcoming and past events pulled from a PostgreSQL database.**
 
-Time spent: **≈18 hours**
+Time spent: **≈8 hours**
 
 ## Required Features
 
@@ -24,7 +24,8 @@ The following **required** functionality is completed:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented required features: 
+<blockquote class="imgur-embed-pub" lang="en" data-id="M8xjURo"><a href="https://imgur.com/M8xjURo">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Notes
 
