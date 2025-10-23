@@ -31,7 +31,7 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented required features:
 
-https://i.imgur.com/YQ1M7ks.gif
+https://imgur.com/a/Pv29GKa
 
 GIF created with ... snipping tool
 
