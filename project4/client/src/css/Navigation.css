@@ -5,3 +5,25 @@ nav {
     padding-right: 50px;
     padding-top: 20px;
 }
+
+.options-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+.option-btn {
+  padding: 6px 10px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:transparent;
+  cursor:pointer;
+  min-width: 110px;
+}
+.option-btn:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.02); }
+.option-btn.active {
+  border-color: white;
+  background: rgba(255,255,255,0.06);
+}
+.option-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+}
+
+.option-btn:focus { outline: 3px solid rgba(255,255,255,0.12); outline-offset: 2px; }
