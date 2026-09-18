@@ -12,10 +12,10 @@ A collection of full-stack web applications demonstrating relational schema desi
   * **Stack:** React.js, Express.js, PostgreSQL, Node.js
   * **Summary:** Community event directory displaying location-filtered data via relational queries, custom database seeders, and modular controllers.
 
-* **[NHL Team Profiles (`/project_listicle`)](./project_listicle)**
+* **[NHL Team Profiles (`/nhl-team-profiles`)](./nhl-team-profiles)**
   * **Stack:** JavaScript, Express.js, PicoCSS, Vite
   * **Summary:** Card-based directory utilizing server-side routing, static asset serving, and Vite proxy configuration.
 
-* **[Creatorverse (`/web103_prework`)](./web103_prework)**
+* **[Creatorverse (`/creatorverse`)](./creatorverse)**
   * **Stack:** React.js, REST APIs, PicoCSS
   * **Summary:** Asynchronous content management interface implementing full CRUD capabilities via the native Fetch API.
